@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Chorro: Life</title>
+  <title>Chorro: {{ app_name }}</title>
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
   <style>
     .bg-clouds{
@@ -131,7 +131,7 @@
 <script>
   $(document).ready(function() {
     //The page for the sse request
-    var DATA_SOURCE = '/life'
+    var DATA_SOURCE = '/' + '{{ app_name}}'.toLowerCase()
 
     $('.nav .active').click(function(){location.reload();});
     $("#btn_start").click(function(){

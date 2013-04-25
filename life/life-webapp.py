@@ -100,7 +100,9 @@ def param_test():
         return Response(life_sim(parse_parameters(request, param_info)),
                         content_type='text/event-stream')
     else:
-        return flask.render_template('life.html', params=param_info.items())  
+        return flask.render_template('life.html', 
+            app_name='Life',
+            params=param_info.items())  
 
 if __name__ == "__main__":
     app.run(host='localhost', port=12345, debug=True, threaded=True)
