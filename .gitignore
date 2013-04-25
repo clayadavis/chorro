@@ -1,3 +1,10 @@
+# Chorro - user generated content
+uimg/
+
+#vim swaps
+*.swp
+
+# Python
 *.py[cod]
 
 # C extensions

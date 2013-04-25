@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chorro: Life</title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <style>
+    .bg-clouds{
+      background-image: url('static/img/wooden_clouds.jpg');
+      background-repeat: repeat;
+      background-attachment:fixed;
+    }
+    .roundedcorners-top{
+      -moz-border-radius-topleft: 8px;
+      border-top-left-radius: 8px;
+      -moz-border-radius-topright: 8px;
+      border-top-right-radius: 8px;
+      padding-left:10px;
+      padding-right:10px;
+      padding-top:10px;
+    }
+    .roundedcorners{
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      padding-left:10px;
+      padding-right:10px;
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+    .pretty-border{
+      border: solid 1px  rgba(0, 0, 0, 0.25);
+      -webkit-box-shadow: 0 0 25px  rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 0 25px rgba(0,0,0,0.25); 
+      box-shadow: 0 0 25px  rgba(0, 0, 0, 0.25);
+    }
+    .container{
+      background-color: rgba(255,255,255,0.9);
+    }
+    #maincontainer{
+      height: 700px;
+    }
+    .nav-tabs{
+      background-color: rgba(255,255,255,1.0);
+    }
+    .nav-tabs>.active>a, .nav-tabs>.active>a:hover{
+      background-color: #B1CAD1;
+      color: #FFF;
+    }
+    .in_box{
+      /*height: 500px;*/
+    }
+    #imgbox{
+      display: none;
+      margin: auto;
+      text-align:center;
+    }
+    #formbox, form{
+      display: inline-block;
+      margin: auto;
+      text-align:center;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+
+<body class="bg-clouds">
+  <div id="maincontainer" class="container roundedcorners pretty-border">
+    <div class="row">
+      <div class="span10">
+        <div class="row" >
+          <div id="instructions" class="span10 text-center">
+            <p id="lead_text" class="lead">
+              Enter simulation parameters and click Start.
+            </p>
+          </div><!--/#instructions-->
+        </div><!--.row-->
+        <div class="row">
+          <div id="imgbox" class="span10">
+          </div><!--/#imgbox-->
+        </div><!--.row-->
+        <div class="row">
+          <div id="formbox" class="span10">
+            <form class="form-horizontal">
+            {% for k, d in params: %}
+              <div class="control-group">  
+              {%- if d.choices is undefined %}     
+                <label class="control-label" for="input_{{ k }}">
+                  {{ d.label }}
+                </label>
+                <div class="controls">
+                  <input type="text" id="input_{{ k }}"{%- if d.default is defined %}value={{ d.default }}{%- endif %}>
+                </div><!--.controls-->
+              {% else %}
+                <label class="control-label" for="select_{{ k }}">
+                  {{ d.label }}
+                </label>
+                <div class="controls">
+                  <select id="select_{{ k }}">
+                  {%- for o in d.choices: %}
+                    <option>{{ o }}</option>
+                  {%- endfor %}
+                  </select>
+                </div><!--.controls-->
+              {% endif %}</div><!--.control-group-->
+            {% endfor %}
+              <div class="control-group">  
+                <div class="controls pull-left">
+                  <button type="button" id="btn_start" class="btn">
+                    Start
+                  </button>
+                </div><!--.controls-->
+              </div><!--.control-group-->
+            {# This blank line makes the source pretty :) #}
+            </form>
+          </div><!--/#imgbox-->
+        </div><!--.row-->
+      </div><!--.span10-->
+      <div class="span2" id="links"> 
+        <div class="progress progress-striped active">
+          <div class="bar" id="p_bar" style="width: 0%;"></div>
+        </div><!-- .progress -->
+        <ul id="linklist" class="nav nav-tabs nav-stacked">
+          <!-- JS adds stuff here -->
+        </ul>
+      </div><!--/#links-->
+    </div><!--.row-->
+  </div><!--.container-->
+</body>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    //The page for the sse request
+    var DATA_SOURCE = '/life'
+
+    $('.nav .active').click(function(){location.reload();});
+    $("#btn_start").click(function(){
+      //Validate input
+      var sel = $('#formbox input')
+      var a = [];
+      for (i=0;i<sel.length;i++) {
+        var key = sel[i].id;
+        var val = sel[i].value;
+        if ($.isNumeric(val)){
+          $('#'+key).closest('.control-group').removeClass('error');
+        } else {
+          $('#'+key).closest('.control-group').addClass('error');
+        }
+        a.push(key.slice(key.indexOf('_')+1) + '=' + val);
+      }
+      
+      if (!!$('#formbox .error').length){
+        return;
+      }
+
+      var sel = $('#formbox select')
+      for (i=0;i<sel.length;i++) {
+        var key = sel[i].id;
+        var val = sel[i].value;
+        a.push(key.slice(key.indexOf('_')+1) + '=' + val);
+      }
+
+      qString = a.join('&');
+      $("#formbox").hide();
+      $("#imgbox").show();
+      $('#lead_text').text('Hover over snapshots on the right as they appear.');
+
+      //Send off request for sim, get ready to receive streaming results
+      if (!!window.EventSource) {
+        var source = new EventSource(encodeURI(DATA_SOURCE + '?' + qString));
+        source.onmessage = function(e) {
+          if (e.data == 'byebye') {
+            source.close();
+            $('#lead_text').text(
+              "Simulation finished. Refresh to enter new parameters.");
+            $('#p_bar').parent().removeClass('active');
+            $('#p_bar').parent().removeClass('progress-striped');
+            $("#p_bar").width('100%');
+          } else {
+            var o = JSON.parse(e.data);
+            $('#linklist').append('<li>'+
+                '<a href="' + o.url + '" target="_blank">' +
+                '<i class="icon-film"></i>' + 
+                '&nbsp;' + o.label +
+                '</a></li>');
+            $("#p_bar").width(o.pct); 
+            $("#linklist a").on("mouseenter", function() {
+              $("#imgbox").html($('<img class="in_box">').attr("src", this.href));
+              $("#linklist li").removeClass('active');
+              $(this).parent().addClass('active');
+              });
+            if (o.label == "Initial Condition"){
+              $("#linklist a:first").trigger("mouseenter");
+              $("#p_bar").show();
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
+</html>
