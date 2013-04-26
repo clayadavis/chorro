@@ -6,4 +6,4 @@
 
 # -w is the number of workers, generally 2N+1 where N is the number of CPUs
 # -b is the ip:port to bind to
-gunicorn -w 9 -b 127.0.0.1:12345 life-webapp:app
+gunicorn -w 9 -b 127.0.0.1:12345 life_webapp:app

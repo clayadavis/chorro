@@ -4,7 +4,7 @@ import flask
 from flask import Flask, Response, redirect, request, url_for
 import sys, os, os.path, string, random, math, time, urlparse
 import itertools, collections
-import life
+import life_core
 
 app = Flask(__name__)
            
@@ -39,7 +39,7 @@ def random_chars(n):
             string.digits, n))
 
 def life_sim(params):
-    sim = life.Life(params['grid_size'], params['p'])
+    sim = life_core.Life(params['grid_size'], params['p'])
     ## uimg is for user images
     uimg_path = os.path.join('uimg', random_chars(12))
     os.mkdir(os.path.join(app.static_folder, uimg_path))
