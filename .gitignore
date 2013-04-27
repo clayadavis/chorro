@@ -3,6 +3,7 @@ uimg/
 
 #vim swaps
 *.swp
+*.*~
 
 # Python
 *.py[cod]

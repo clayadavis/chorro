@@ -1,0 +1,744 @@
+Identification_Information:
+  Citation:
+    Citation_Information:
+      Originator: United States Department of Commerce, United States Census Bureau (Data creator)
+      Originator: Indiana Business Research Center (Data provider)
+      Originator: Bethany Holliday (Data provider)
+      Originator: Indiana Geological Survey (Data processor)
+      Originator: Denver Harper (Data processor)
+      Publication_Date: 20040520
+      Title:
+        CENSUS_HISTORICAL_MCD_IN: Populations and Population Densities of Minor Civil Divisions in
+        Indiana from 1890 to 2000 (United States Census Bureau, 1:500,000, Polygon Shapefile)
+      Geospatial_Data_Presentation_Form: Vector digital data
+      Publication_Information:
+        Publication_Place: Bloomington, Indiana
+        Publisher: Indiana Geological Survey (IGS)
+      Other_Citation_Details:
+        CENSUS_HISTORICAL_MCD_IN was derived by joining tabular data to a pre-existing shapefile
+        named "MINOR_CIVIL_DIVISIONS_IN."
+      Online_Linkage: http://igs.indiana.edu/arcims/statewide/download.html
+  Description:
+    Abstract:
+      Historical census data for minor civil divisions (also known as "civil townships") in Indiana
+      were provided by personnel of the Indiana Business Research Center to personnel of the Indiana
+      Geological Survey (IGS). The data were joined by personnel of IGS to a shapefile of minor
+      civil divisions. The historical census data consisted of population statistics from 1890 to
+      2000. The boundaries of civil townships are not believed to have changed greatly during the
+      past 110 years. Using these data, personnel of the IGS calculated population density for each
+      civil township during census years.
+    Purpose:
+      CENSUS_HISTORICAL_MCD_IN.SHP was created to provide a GIS data layer of historical population
+      data for Indiana, by minor civil divisions (civil townships).
+  Time_Period_of_Content:
+    Time_Period_Information:
+      Range_of_Dates/Times:
+        Beginning_Date: 1890
+        Ending_Date: 2000
+    Currentness_Reference: Publication date
+  Status:
+    Progress: Complete
+    Maintenance_and_Update_Frequency: None planned
+  Spatial_Domain:
+    Bounding_Coordinates:
+      West_Bounding_Coordinate: -88.0972
+      East_Bounding_Coordinate: -84.6884
+      North_Bounding_Coordinate: 41.7734
+      South_Bounding_Coordinate: 37.7606
+  Keywords:
+    Theme:
+      Theme_Keyword_Thesaurus: IGS Metadata Keyword Thesaurus
+      Theme_Keyword: Indiana Geological Survey (IGS)
+      Theme_Keyword: Indiana Business Research Center (IBRC)
+      Theme_Keyword: geographic information system (GIS)
+      Theme_Keyword: United States Department of Commerce
+      Theme_Keyword: United States Census Bureau (USCB)
+      Theme_Keyword: Minor Civil Division (MCD)
+      Theme_Keyword: polygon
+      Theme_Keyword: township
+      Theme_Keyword: civil township
+      Theme_Keyword: population
+      Theme_Keyword: population density
+      Theme_Keyword: population change
+      Theme_Keyword: vector
+    Theme:
+      Theme_Keyword_Thesaurus: Geography Network Keyword Thesaurus
+      Theme_Keyword: society
+    Place:
+      Place_Keyword_Thesaurus: IGS Metadata Keyword Thesaurus
+      Place_Keyword: Indiana
+      Place_Keyword: Adams County
+      Place_Keyword: Allen County
+      Place_Keyword: Bartholomew County
+      Place_Keyword: Benton County
+      Place_Keyword: Blackford County
+      Place_Keyword: Boone County
+      Place_Keyword: Brown County
+      Place_Keyword: Carroll County
+      Place_Keyword: Cass County
+      Place_Keyword: Clark County
+      Place_Keyword: Clay County
+      Place_Keyword: Clinton County
+      Place_Keyword: Crawford County
+      Place_Keyword: Daviess County
+      Place_Keyword: Dearborn County
+      Place_Keyword: Decatur County
+      Place_Keyword: DeKalb County
+      Place_Keyword: Delaware County
+      Place_Keyword: Dubois County
+      Place_Keyword: Elkhart County
+      Place_Keyword: Fayette County
+      Place_Keyword: Floyd County
+      Place_Keyword: Fountain County
+      Place_Keyword: Franklin County
+      Place_Keyword: Fulton County
+      Place_Keyword: Gibson County
+      Place_Keyword: Grant County
+      Place_Keyword: Greene County
+      Place_Keyword: Hamilton County
+      Place_Keyword: Hancock County
+      Place_Keyword: Harrison County
+      Place_Keyword: Hendricks County
+      Place_Keyword: Henry County
+      Place_Keyword: Howard County
+      Place_Keyword: Huntington County
+      Place_Keyword: Jackson County
+      Place_Keyword: Jasper County
+      Place_Keyword: Jay County
+      Place_Keyword: Jefferson County
+      Place_Keyword: Jennings County
+      Place_Keyword: Johnson County
+      Place_Keyword: Knox County
+      Place_Keyword: Kosciusko County
+      Place_Keyword: Lagrange County
+      Place_Keyword: Lake County
+      Place_Keyword: LaPorte County
+      Place_Keyword: Lawrence County
+      Place_Keyword: Madison County
+      Place_Keyword: Marion County
+      Place_Keyword: Marshall County
+      Place_Keyword: Martin County
+      Place_Keyword: Miami County
+      Place_Keyword: Monroe County
+      Place_Keyword: Montgomery County
+      Place_Keyword: Morgan County
+      Place_Keyword: Newton County
+      Place_Keyword: Noble County
+      Place_Keyword: Ohio County
+      Place_Keyword: Orange County
+      Place_Keyword: Owen County
+      Place_Keyword: Parke County
+      Place_Keyword: Perry County
+      Place_Keyword: Pike County
+      Place_Keyword: Porter County
+      Place_Keyword: Posey County
+      Place_Keyword: Pulaski County
+      Place_Keyword: Putnam County
+      Place_Keyword: Randolph County
+      Place_Keyword: Ripley County
+      Place_Keyword: Rush County
+      Place_Keyword: Scott County
+      Place_Keyword: Shelby County
+      Place_Keyword: Spencer County
+      Place_Keyword: St Joseph County
+      Place_Keyword: Starke County
+      Place_Keyword: Steuben County
+      Place_Keyword: Sullivan County
+      Place_Keyword: Switzerland County
+      Place_Keyword: Tippecanoe County
+      Place_Keyword: Tipton County
+      Place_Keyword: Union County
+      Place_Keyword: Vanderburgh County
+      Place_Keyword: Vermillion County
+      Place_Keyword: Vigo County
+      Place_Keyword: Wabash County
+      Place_Keyword: Warren County
+      Place_Keyword: Warrick County
+      Place_Keyword: Washington County
+      Place_Keyword: Wayne County
+      Place_Keyword: Wells County
+      Place_Keyword: White County
+      Place_Keyword: Whitley County
+  Access_Constraints:
+    This file is available to anyone, but access may be contingent on written request, specific terms
+    relevant to the agency or person making the request, and/or current freedom of information statutes
+    in the state of Indiana.
+  Use_Constraints:
+    DATA DISCLAIMER
+
+    This data set was compiled by Indiana University, Indiana Geological Survey, using data believed to
+    be accurate; however, a degree of error is inherent in all data. This product is distributed "AS-IS"
+    without warranties of any kind, either expressed or implied, including but not limited to warranties
+    of suitability to a particular purpose or use. No attempt has been made in either the design or
+    production of these data to define the limits or jurisdiction of any federal, state, or local government.
+    These data are intended for use only at the published scale or smaller and are for reference purposes only.
+    They are not to be construed as a legal document or survey instrument. A detailed on-the-ground survey and
+    historical analysis of a single site may differ from these data.
+
+    COPYRIGHT 2004, THE TRUSTEES OF INDIANA UNIVERSITY,
+    INDIANA GEOLOGICAL SURVEY, ALL RIGHTS RESERVED
+
+    The information on these media is proprietary to Indiana University, Indiana Geological Survey. Any copying,
+    adaptation, distribution, public performance, or public display of this information without the express written
+    consent of Indiana University, Indiana Geological Survey is discouraged.
+
+    CREDIT
+
+    It is requested that the Indiana Geological Survey be cited in any products generated from this data. The
+    following source citation should be included: CENSUS_HISTORICAL_MCD_IN: Populations and Population Densities of Minor Civil Divisions in
+    Indiana from 1890 to 2000 (United States Census Bureau, 1:500,000, Polygon Shapefile), digital representation by Denver Harper, 2004.
+
+    WARRANTY
+
+    Indiana University, Indiana Geological Survey warrants that the media on which this product is stored will be
+    free from defect in materials and workmanship for ninety (90) days from the date of acquisition. If such a defect
+    is found, return the media to Publication Sales, Indiana Geological Survey, 611 North Walnut Grove, Bloomington,
+    Indiana 47405 2208, and it will be replaced free of charge.
+
+    LIMITATION OF WARRANTIES AND LIABILITY
+
+    Except for the expressed warranty above, the product is provided "AS IS", without any other warranties or
+    conditions, expressed or implied, including, but not limited to, warranties for product quality, or suitability
+    to a particular purpose or use. The risk or liability resulting from the use of this product is assumed by the
+    user. Indiana University, Indiana Geological Survey shares no liability with product users indirect, incidental,
+    special, or consequential damages whatsoever, including, but not limited to, loss of revenue or profit, lost or
+    damaged data or other commercial or economic loss. Indiana University, Indiana Geological Survey is not responsible
+    for claims by a third party. The maximum aggregate liability to the original purchaser shall not exceed the amount
+    paid by you for the product.
+  Point_of_Contact:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Indiana Geological Survey
+      Contact_Address:
+        Address_Type: Mailing and physical address
+        Address: 611 North Walnut Grove
+        City: Bloomington
+        State_or_Province: Indiana
+        Postal_Code: 47405 2208
+        Country: USA
+      Contact_Voice_Telephone: 812 855 7636
+      Contact_Facsimile_Telephone: 812 855 2862
+      Contact_Electronic_Mail_Address: IGSinfo@indiana.edu
+      Hours_of_Service: 0800 to 1700 Eastern Standard Time
+      Contact_Instructions: Monday through Friday, except holidays
+  Native_Data_Set_Environment: Windows 2000 operating system; ESRI ArcGIS 8.3 shapefile; approximately 933 Kb
+
+Data_Quality_Information:
+  Attribute_Accuracy:
+    Attribute_Accuracy_Report:
+      No formal metadata in the format of the Federal Geographic Data Committee (FGDC)
+      was provided by the U.S. Census Bureau pertaining to the source data for the shapefile
+      named "MINOR_CIVIL_DIVISIONS_IN." Nor was any metadata provided by the Indiana Business
+      Research Center pertaining to population statistics for civil townships in Indiana
+      from 1890 to 2000.
+  Logical_Consistency_Report: No checks for logical consistency were made.
+  Completeness_Report: No information is available regarding the completeness of this data.
+  Positional_Accuracy:
+    Horizontal_Positional_Accuracy:
+      Horizontal_Positional_Accuracy_Report:
+        No information was provided by the U.S. Census Bureau pertaining to the horizontal positional accuracy
+        of the source data.
+    Vertical_Positional_Accuracy:
+      Vertical_Positional_Accuracy_Report: The vertical positional accuracy was not a factor in the production of this data.
+  Lineage:
+    Source_Information:
+      Source_Citation:
+        Citation_Information:
+          Originator: U.S. Census Bureau
+          Publication_Date: 20000101
+          Title: 2000 County Subdivisions
+          Geospatial_Data_Presentation_Form: Vector digital data
+          Publication_Information:
+            Publication_Place: Washington, D.C.
+            Publisher: Department of Commerce, U.S. Census Bureau, Geography Division, Cartographic Operations Branch
+          Other_Citation_Details: This source file can be downloaded at the following URL: http://www.census.gov/geo/www/cob/cs2000.html
+      Source_Scale_Denominator: 500,000
+      Type_of_Source_Media: Zip file containing an ESRI interchange file (E00)
+      Source_Time_Period_of_Content:
+        Time_Period_Information:
+          Single_Date/Time:
+            Calendar_Date: 20000101
+        Source_Currentness_Reference: Publication date
+      Source_Citation_Abbreviation: cs18_d00_e00.zip
+      Source_Contribution: Minor Civil Divisions (MCDs) for Indiana in 2000
+    Process_Step:
+      Process_Description:
+        CS18_D00_E00.ZIP was downloaded from the USCB and unzipped. ESRI ArcToolBox was then used to convert the ESRI interchange
+        file CS18_D00.E00 to an ESRI coverage named "MCD_IN." MCD_IN was then converted to a shapefile named MCD_IN.SHP.
+        ESRI ArcToolBox "Define Projection Wizard" was then used on MCD_IN.SHP to define the projection provided, which was Geographic
+        (Lat/Long) NAD83. ESRI ArcToolBox "Project Wizard" was then used to reproject to UTM Zone 16, NAD83, and the output shapefile
+        was named CENSUS_HISTORICAL_MCD_IN.SHP. ESRI ArcMap was then used to edit the shapefile, and the following fields were
+        dropped from the attribute table: "Area," "Perimeter," "MCD_IN_," "MCD_IN_I," "State," "LSAD," and "LSAD_TRANS."
+
+        Two additional edits were made to the attribute table using ESRI ArcMap. Names of Indiana counties were added to a field
+        named "Cnty_Name," using the "Join" function, and the field named "Name" was re-named as "MCD_Name."
+      Source_Used_Citation_Abbreviation: CS18_D00_E00.ZIP
+      Source_Used_Citation_Abbreviation: MCD_IN
+      Source_Used_Citation_Abbreviation: MCD_IN.SHP
+      Source_Produced_Citation_Abbreviation: MINOR_CIVIL_DIVISIONS_IN.SHP
+      Process_Date: 20031222
+      Process_Contact:
+        Contact_Information:
+          Contact_Person_Primary:
+            Contact_Organization: Indiana Geological Survey
+            Contact_Person: Chris Dintaman
+          Contact_Position: Geologist/GIS Specialist
+          Contact_Address:
+            Address_Type: Mailing and physical address
+            Address: 611 North Walnut Grove
+            City: Bloomington
+            State_or_Province: Indiana
+            Postal_Code: 47405 2208
+            Country: USA
+          Contact_Voice_Telephone: 812 856 5654
+          Contact_Facsimile_Telephone: 812 855 2862
+          Contact_Electronic_Mail_Address: cdintama@indiana.edu
+          Hours_of_Service: 0800 to 1700 Eastern Standard Time
+          Contact_Instructions: Monday through Friday, except holidays
+    Process_Step:
+      Process_Description:
+        A Microsoft Excel spreadsheet named "TOWNSHIP_COUNTS_1890TO2000.XLS" was provided by
+        personnel of the Indiana Business Research Center (IBRC) to personnel of the Indiana
+        Geological Survey (IGS). Using ESRI ArcView v. 3.2, the data in this spreadsheet was joined
+        by IGS personnel to a shapefile named "MINOR_CIVIL_DIVISIONS_IN.SHP," using the field
+        named "MCDFIPS" in TOWNSHIP_COUNTS_1890TO2000 and the field named "COUSUBFP"
+        in MINOR_CIVIL_DIVISIONS_IN.
+
+        Fields containing population data from 1890 through 2000 were re-named "POP1890"
+        through "POP2000," respectively.
+
+        Using ESRI ArcView v. 3.2, the shapefile named "MINOR_CIVIL_DIVISIONS_IN.SHP" was
+        edited by adding a field named "CalcArea." Values for this field were calculated
+        using the calculator function and the following formula: CalcArea = [Shape].ReturnArea.
+        Values in that field had units of "square meters."
+
+        Using ESRI ArcView v. 3.2, the shapefile named "MINOR_CIVIL_DIVISIONS_IN.SHP" was
+        edited by adding a field named "Area_KM2." Values for this field were calculated
+        using the calculator function by dividing CalcArea by 1,000,000. Values in the
+        field have units of "square kilometers."
+
+        The field named "CalcArea" was removed.
+
+        Using ESRI ArcView v. 3.2, the shapefile named "MINOR_CIVIL_DIVISIONS_IN.SHP" was
+        edited by adding fields named "POPDENS1890" through "POPDENS2000." Values for these
+        fields were calculated using the calculator function and dividing "POP1890" through
+        "POP2000," respectively, by "Area_KM2." Values in these field have units of
+        "persons per square kilometer."
+
+      Process_Date: 20031223
+      Process_Contact:
+        Contact_Information:
+          Contact_Person_Primary:
+            Contact_Organization: Indiana Geological Survey
+            Contact_Person: Denver Harper
+          Contact_Position: Geologist
+          Contact_Address:
+            Address_Type: Mailing and physical address
+            Address: 611 North Walnut Grove
+            City: Bloomington
+            State_or_Province: Indiana
+            Postal_Code: 47405 2208
+            Country: USA
+          Contact_Voice_Telephone: 812 855 1369
+          Contact_Facsimile_Telephone: 812 855 2862
+          Contact_Electronic_Mail_Address: dharper@indiana.edu
+          Hours_of_Service: 0800 to 1700 Eastern Standard Time
+          Contact_Instructions: Monday through Friday, except holidays
+    Process_Step:
+      Process_Description:
+        This metadata file was pre-parsed and parsed using CNS (Chew and Spit, v. 2.6.1) and
+        MP (Metadata Parser, v. 2.7.1) software written by Peter N. Schweitzer (United
+        States Geological Survey).  The errors generated by MP were all addressed and corrected,
+        except that no values were assigned to "Abscissa_Resolution" and "Ordinate_Resolution."
+      Process_Date: 20040524
+      Process_Contact:
+        Contact_Information:
+          Contact_Person_Primary:
+            Contact_Organization: Indiana Geological Survey
+            Contact_Person: Denver Harper
+          Contact_Position: Geologist/GIS Specialist
+          Contact_Address:
+            Address_Type: Mailing and physical address
+            Address: 611 North Walnut Grove
+            City: Bloomington
+            State_or_Province: Indiana
+            Postal_Code: 47405 2208
+            Country: USA
+          Contact_Voice_Telephone: 812 855 1369
+          Contact_Facsimile_Telephone: 812 855 2862
+          Contact_Electronic_Mail_Address: dharper@indiana.edu
+          Hours_of_Service: 0800 to 1700 Eastern Standard Time
+          Contact_Instructions: Monday through Friday, except holidays
+
+Spatial_Data_Organization_Information:
+  Indirect_Spatial_Reference: Indiana
+  Direct_Spatial_Reference_Method: Vector
+  Point_and_Vector_Object_Information:
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: GT-polygon composed of chains
+      Point_and_Vector_Object_Count: 1011
+
+Spatial_Reference_Information:
+  Horizontal_Coordinate_System_Definition:
+    Planar:
+      Grid_Coordinate_System:
+        Grid_Coordinate_System_Name: Universal Transverse Mercator
+        Universal_Transverse_Mercator:
+          UTM_Zone_Number: 16
+          Transverse_Mercator:
+            Scale_Factor_at_Central_Meridian: 0.999600
+            Longitude_of_Central_Meridian: -87.000000
+            Latitude_of_Projection_Origin: 0.000000
+            False_Easting: 500000.000000
+            False_Northing: 0.000000
+      Planar_Coordinate_Information:
+        Planar_Coordinate_Encoding_Method: Coordinate pair
+        Coordinate_Representation:
+          Abscissa_Resolution:
+          Ordinate_Resolution:
+        Planar_Distance_Units: Meters
+    Geodetic_Model:
+      Horizontal_Datum_Name: North American Datum of 1983
+      Ellipsoid_Name: GRS 80
+      Semi-major_Axis: 6378137.0000000
+      Denominator_of_Flattening_Ratio: 298.26
+
+Entity_and_Attribute_Information:
+  Detailed_Description:
+    Entity_Type:
+      Entity_Type_Label: CENSUS_HISTORICAL_MCD_IN.dbf
+      Entity_Type_Definition: Shapefile Attribute Table
+      Entity_Type_Definition_Source: None
+    Attribute:
+      Attribute_Label: Shape
+      Attribute_Definition: Polygon
+      Attribute_Definition_Source: Software generated
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Software computed
+    Attribute:
+      Attribute_Label: County
+      Attribute_Definition: County code number
+      Attribute_Definition_Source: U.S. Census Bureau
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: numeric value
+    Attribute:
+      Attribute_Label: MCD
+      Attribute_Definition: Minor Civil Division number
+      Attribute_Definition_Source: U.S. Census Bureau
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 003
+          Range_Domain_Maximum: 105
+    Attribute:
+      Attribute_Label: COUSUBFP
+      Attribute_Definition: 5-digit identification number
+      Attribute_Definition_Source: U.S. Census Bureau
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 00172
+          Range_Domain_Maximum: 86408
+    Attribute:
+      Attribute_Label: MCD_Name
+      Attribute_Definition: Name of minor civil division
+      Attribute_Definition_Source: U.S. Census Bureau
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Name of minor civil division
+    Attribute:
+      Attribute_Label: Cnty_Name
+      Attribute_Definition: Name of county
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Name of county
+    Attribute:
+      Attribute_Label: Area_km2
+      Attribute_Definition: Area of minor civil division in square kilometers
+      Attribute_Definition_Source: Software generated
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Software computed
+    Attribute:
+      Attribute_Label: Pdens2000
+      Attribute_Definition: Population density in 2000 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 1519
+    Attribute:
+      Attribute_Label: Pdens1990
+      Attribute_Definition: Population density in 1990 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 1
+          Range_Domain_Maximum: 1656
+    Attribute:
+      Attribute_Label: Pdens1980
+      Attribute_Definition: Population density in 1980 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 1
+          Range_Domain_Maximum: 1897
+    Attribute:
+      Attribute_Label: Pdens1970
+      Attribute_Definition: Population density in 1970 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 1
+          Range_Domain_Maximum: 2488
+    Attribute:
+      Attribute_Label: Pdens1960
+      Attribute_Definition: Population density in 1960 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 2
+          Range_Domain_Maximum: 3030
+    Attribute:
+      Attribute_Label: Pdens1950
+      Attribute_Definition: Population density in 1950 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 2
+          Range_Domain_Maximum: 3144
+    Attribute:
+      Attribute_Label: Pdens1940
+      Attribute_Definition: Population density in 1940 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 3
+          Range_Domain_Maximum: 3066
+    Attribute:
+      Attribute_Label: Pdens1930
+      Attribute_Definition: Population density in 1930 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 2
+          Range_Domain_Maximum: 2886
+    Attribute:
+      Attribute_Label: Pdens1920
+      Attribute_Definition: Population density in 1920 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 2
+          Range_Domain_Maximum: 2576
+    Attribute:
+      Attribute_Label: Pdens1910
+      Attribute_Definition: Population density in 1910 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 2
+          Range_Domain_Maximum: 2138
+    Attribute:
+      Attribute_Label: Pdens1900
+      Attribute_Definition: Population density in 1900 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 3
+          Range_Domain_Maximum: 1527
+    Attribute:
+      Attribute_Label: Pdens1890
+      Attribute_Definition: Population density in 1890 (persons per square kilometer)
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 1
+          Range_Domain_Maximum: 1067
+    Attribute:
+      Attribute_Label: Pop2000
+      Attribute_Definition: Population in 2000
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 167055
+    Attribute:
+      Attribute_Label: Pop1990
+      Attribute_Definition: Population in 1990
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 182140
+    Attribute:
+      Attribute_Label: Pop1980
+      Attribute_Definition: Population in 1980
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 208624
+    Attribute:
+      Attribute_Label: Pop1970
+      Attribute_Definition: Population in 1970
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 273634
+    Attribute:
+      Attribute_Label: Pop1960
+      Attribute_Definition: Population in 1960
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 333351
+    Attribute:
+      Attribute_Label: Pop1950
+      Attribute_Definition: Population in 1950
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 337211
+    Attribute:
+      Attribute_Label: Pop1940
+      Attribute_Definition: Population in 1940
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 314505
+    Attribute:
+      Attribute_Label: Pop1930
+      Attribute_Definition: Population in 1930
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 300073
+    Attribute:
+      Attribute_Label: Pop1920
+      Attribute_Definition: Population in 1920
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 283414
+    Attribute:
+      Attribute_Label: Pop1910
+      Attribute_Definition: Population in 1910
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 218497
+    Attribute:
+      Attribute_Label: Pop1900
+      Attribute_Definition: Population in 1900
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 167970
+    Attribute:
+      Attribute_Label: Pop1890
+      Attribute_Definition: Population in 1890
+      Attribute_Definition_Source: Indiana Geological Survey
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum:
+            117328
+
+
+Distribution_Information:
+  Distributor:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Indiana Geological Survey
+        Contact_Person: Publication Sales
+      Contact_Position: Clerk
+      Contact_Address:
+        Address_Type: Mailing and physical address
+        Address: 611 North Walnut Grove
+        City: Bloomington
+        State_or_Province: Indiana
+        Postal_Code: 47405 2208
+        Country: USA
+      Contact_Voice_Telephone: 812 855 7636
+      Contact_Facsimile_Telephone: 812 855 2862
+      Contact_Electronic_Mail_Address: IGSinfo@indiana.edu
+      Hours_of_Service: 0800 to 1700 Eastern Standard Time
+      Contact_Instructions: Monday through Friday, except holidays
+
+  Resource_Description: Downloadable data
+
+  Distribution_Liability:
+    COPYRIGHT 2004, THE TRUSTEES OF INDIANA UNIVERSITY,
+    INDIANA GEOLOGICAL SURVEY, ALL RIGHTS RESERVED
+
+    The information on these media is proprietary to Indiana University,
+    Indiana Geological Survey. Any copying, adaptation, distribution, public
+    performance, or public display of this information without the express
+    written consent of Indiana University, Indiana Geological Survey is
+    discouraged.
+
+    CREDIT
+
+    It is requested that the Indiana Geological Survey be cited in any products generated from this data. The
+    following source citation should be included: CENSUS_HISTORICAL_MCD_IN: Populations and Population Densities of Minor Civil Divisions in
+    Indiana from 1890 to 2000 (United States Census Bureau, 1:500,000, Polygon Shapefile), digital representation by Denver
+	Harper, 2004.
+
+    WARRANTY
+
+    Indiana University, Indiana Geological Survey warrants that the media on
+    which this product is stored will be free from defect in materials and
+    workmanship for ninety (90) days from the date of acquisition. If such a
+    defect is found, return the media to Publication Sales, Indiana Geological
+    Survey, 611 North Walnut Grove, Bloomington, Indiana 47405 2208, and it
+    will be replaced free of charge.
+
+    LIMITATION OF WARRANTIES AND LIABILITY
+
+    Except for the expressed warranty above, the product is provided "AS IS",
+    without any other warranties or conditions, expressed or implied,
+    including, but not limited to, warranties for product quality, or
+    suitability to a particular purpose or use. The risk or liability resulting
+    from the use of this product is assumed by the user. Indiana University,
+    Indiana Geological Survey shares no liability with product users indirect,
+    incidental, special, or consequential damages whatsoever, including, but
+    not limited to, loss of revenue or profit, lost or damaged data or other
+    commercial or economic loss. Indiana University, Indiana Geological Survey
+    is not responsible for claims by a third party. The maximum aggregate
+    liability to the original purchaser shall not exceed the amount paid by you
+    for the product.
+Metadata_Reference_Information:
+  Metadata_Date: 20040524
+  Metadata_Review_Date: 20040524
+  Metadata_Contact:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Indiana Geological Survey
+        Contact_Person: Denver Harper
+      Contact_Position: Geologist/GIS Specialist
+      Contact_Address:
+        Address_Type: Mailing and physical address
+        Address: 611 North Walnut Grove
+        City: Bloomington
+        State_or_Province: Indiana
+        Postal_Code: 47405 2208
+        Country: USA
+      Contact_Voice_Telephone: 812 855 1369
+      Contact_Facsimile_Telephone: 812 855 2862
+      Contact_Electronic_Mail_Address: dharper@indiana.edu
+      Hours_of_Service: 0800 to 1700 Eastern Standard Time
+      Contact_Instructions: Monday through Friday, except holidays
+  Metadata_Standard_Name: FGDC-CSDGM
+  Metadata_Standard_Version: FGDC-STD-001-1998
+  Metadata_Access_Constraints: None
+  Metadata_Use_Constraints:
+    This metadata file is intended to accompany the
+    data set identified and received from the IGS. It is not to be altered or
+    summarized. IGS does not support secondary distribution. If this data
+    set was received from anyone other than the IGS, this metadata file and the
+    data set it describes may lack integrity.
