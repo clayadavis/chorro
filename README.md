@@ -10,9 +10,10 @@ a proof-of-concept or a design statement as opposed to a real software release.
 Further work needs to be done to abstract out many of the details involved.
 
 The intended workflow goes something like this:
-0. Import a previously-built simulation
-1. Define the numerical parameters for the simulation
-2. Wrap your simulation in a generator function that yields snapshots of the
+
+0.  Import a previously-built simulation
+1.  Define the numerical parameters for the simulation
+2.  Wrap your simulation in a generator function that yields snapshots of the
 simulation state.
 
 This repo has two examples of this workflow/framework. The first is a simple
