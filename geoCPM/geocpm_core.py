@@ -2,6 +2,12 @@
 # <nbformat>3.0</nbformat>
 
 # <codecell>
+"""
+This is the core module for geoCPM. Check out the test_drive notebook 
+for an interactive implementation, or of course check out the webapp.
+"""
+
+# <codecell>
 
 from numba.decorators import jit, autojit
 from numba import float64, i4, i1
@@ -17,17 +23,8 @@ import copy, itertools, time, random
 
 # <codecell>
 def load_shapefile(fname):
-    #sf = shapefile.Reader("Census_Historical_MCD_IN", quiet=True)
     sf = shapefile.Reader(fname, quiet=True)
-    srd = sf.shapeRecordDicts()
-    print len(srd), "shapes loaded."
-
-    data_frame = pd.DataFrame([x.record for x in srd])
-    data_frame['POINTS'] = [x.shape.points for x in srd]
-    data_frame['BBOX'] = [x.shape.bbox for x in srd]
-    #data_frame = data_frame.set_index('COUSUBFP')
-    #print data_frame
-    return data_frame
+    return sf.shapeRecordDataFrame()
     # <codecell>
 
 def rescale(pts, x_min=0.0, y_min=0.0, x_ar=1.0, y_ar=1.0):
@@ -44,8 +41,8 @@ def rgb_to_index(arr):
     return arr[:,:,0]*65536 + arr[:,:,1]*256 + arr[:,:,2]
 
 def draw_map(df, color=base_256, bg=(255, 255, 255), x_dim=1000):
-    x_vals = [df['BBOX'][x][0:3:2] for x in df.index]
-    y_vals = [df['BBOX'][x][1:4:2] for x in df.index]
+    x_vals = [df['shape', 'bbox'][x][0:3:2] for x in df.index]
+    y_vals = [df['shape', 'bbox'][x][1:4:2] for x in df.index]
     x_max = max(max(x_vals))
     x_min = min(min(x_vals))
     y_max = max(max(y_vals))
@@ -57,7 +54,7 @@ def draw_map(df, color=base_256, bg=(255, 255, 255), x_dim=1000):
     im = Image.new('RGB', (x_dim, y_dim), bg) # Create a blank image
     draw = ImageDraw.Draw(im)
     for idx in range(len(df)):
-        rescaled_poly = rescale(np.array(df['POINTS'][idx]), x_min, y_min, x_ar, y_ar)
+        rescaled_poly = rescale(np.array(df['shape', 'points'][idx]), x_min, y_min, x_ar, y_ar)
         draw.polygon(rescaled_poly.flatten().tolist(), fill=color(idx))
         #draw.polygon(rescaled_poly.flatten().tolist(), fill="magenta", outline="black")
     return im
@@ -97,11 +94,10 @@ def jit_get_neighbor_weights(grid, N):
 
 def make_neighbor_graph(weights):
     G = nx.Graph()
-    #graph_label = lambda x: "%s_%s" % (df['COUNTY'][x], df['MCD'][x])
-    #graph_label = lambda x: df['COUSUBFP'][x]
+    #graph_label = lambda x: "%s_%s" % (df['record', 'COUNTY'][x], df['record', 'MCD'][x])
+    #graph_label = lambda x: df['record', 'COUSUBFP'][x]
     graph_label = lambda x: x
-    for (a, b) in zip(*weights.nonzero()):
-    #for (a,b) in np.array(weights.nonzero()).T:    
+    for (a, b) in zip(*weights.nonzero()):  
         w = weights[a,b]+weights[b,a]
         if w > 0:
             G.add_edge(graph_label(a), graph_label(b), weight=w)
@@ -117,7 +113,7 @@ def make_graph(data_frame):
 
     tic = time.time()
     neighbor_graph = make_neighbor_graph(network_weights)
-    #This works, but doesn't look up the labels.
+    ## This works, but doesn't look up the labels.
     #G = nx.from_numpy_matrix(nw) 
     print "Making neighbor graph took %0.3f seconds." % (time.time() - tic)
     return neighbor_graph
@@ -125,7 +121,7 @@ def make_graph(data_frame):
 # <codecell>
 
 class SimulationBase(object):
-    def __init__(self, G, K, df, **kwargs):
+    def __init__(self, G, df, K, **kwargs):
         self.G = G.copy()
         self.K = K
         self.df = df.copy()
@@ -140,7 +136,7 @@ class SimulationBase(object):
         
         self.border_cells = np.zeros(len(self.df), dtype=np.bool)
         self._update_border_status()
-        self.populations = np.array(self.df['POP2000'], dtype=np.int32)
+        self.populations = np.array(self.df['record', 'POP2000'], dtype=np.int32)
         self.weights = np.array([(u,v,w['weight']) for (u,v,w) in self.G.edges(data=True)], dtype=np.int32)
         #self.adj = np.array(nx.to_numpy_matrix(self.G, weight='weight'), dtype=uint32)
         
@@ -319,50 +315,4 @@ class Simulation(SimulationBase):
                                         self.groups, self.weights) \
              + self.lambda_pop * self.jit_population_equality(
                                     self.groups, self.K, self.populations)
-
-# <codecell>
-
-if __name__ == "__main__":
-    data_frame = load_shapefile("Census_Historical_MCD_IN")
-    neighbor_graph = make_graph(data_frame)
-    
-    sim = Simulation(neighbor_graph, 9, data_frame)
-    sim.draw()
-
-    # <codecell>
-
-    sim.T = 150
-    N = 10
-    tic = time.time()
-    #profile.run('sim.run(%i)'%N)
-    sim.run(N, debug=False)
-    #sim.run(1, debug=True)
-
-    print "Steps took %0.3f seconds and accepted %i changes:" % (time.time() - tic, sum(sim.changes_accepted[-N:]))
-    if N > 1:
-        print sim.changes_accepted[-N:]
-    sim.draw()
-
-    # <codecell>
-
-    sim = Simulation(neighbor_graph, 9, df)
-    sim.draw()
-    image_snaps = [sim.get_image()]
-    #annealing_schedule = [(50, 200), (50,150), (50,100), (50,50), (50,25), (50,12), (50,6), (50,3), (50,2)]
-    #annealing_schedule = itertools.izip(itertools.cycle((500,)), (200, 150, 100, 75, 50, 38, 25, 20, 15, 10, 5, 2))
-    l = 0.0920243
-    annealing_schedule = ((100,300*np.e**(-l*t)) for t in xrange(75))
-    #1000*exp(-x)?
-    tic = time.time()
-    for (N, T) in annealing_schedule:
-        sim.T = T
-        sim.run(N)
-        im = sim.get_image()
-        image_snaps.append(im)
-        
-        print "Image for T=%i:" % T
-        imgplot = plt.imshow(sim.get_image())
-        imgplot.set_cmap('spectral')
-
-    print "%i steps took %0.3f seconds" % (sim.mcs, time.time()-tic)
 

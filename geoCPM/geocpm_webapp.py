@@ -50,7 +50,7 @@ def geocpm_sim(params):
     data_frame = geocpm_core.load_shapefile(os.path.join(data_path, data_file))
     neighbor_graph = geocpm_core.make_graph(data_frame)
     print 'K:', params['K']
-    sim = geocpm_core.Simulation(neighbor_graph, params['K'], data_frame,
+    sim = geocpm_core.Simulation(neighbor_graph, data_frame, params['K'],
                         lambdas=(params['lambda_comp'], params['lambda_pop']))
     
     uimg_path = os.path.join('uimg', random_chars(12))

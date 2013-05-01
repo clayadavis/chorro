@@ -2,8 +2,9 @@
 shapefile.py
 Provides read and write support for ESRI Shapefiles.
 author: jlawhead<at>geospatialpython.com
-date: 20110927
-version: 1.1.4
+    with modifications by: claydavi<at>indiana.edu
+date: 20130430
+version: 1.1.4-claydavi
 Compatible with Python versions 2.4-3.x
 """
 
@@ -12,13 +13,15 @@ import os
 import sys
 import time
 import array
+import warnings
+
 try:
-    from pandas import DataFrame
-    from numpy import nan
-    PANDAS_SUPPORT = True
+    import pandas
 except ImportError:
     PANDAS_SUPPORT = False
-#
+else:
+    PANDAS_SUPPORT = True
+
 # Constants for shape types
 NULL = 0
 POINT = 1
@@ -363,7 +366,7 @@ class Reader:
         fmtSize = calcsize(fmt)
         return (fmt, fmtSize)
 
-    def __record(self):
+    def __record(self, i=-1):
         """Reads and returns a dbf record row as a list of values."""
         f = self.__getFileObj(self.dbf)
         recFmt = self.__recordFmt()
@@ -373,7 +376,7 @@ class Reader:
             return None
         record = []
         for (name, typ, size, deci), value in zip(self.fields,
-                                                                                                recordContents):
+                                                    recordContents):
             if name == 'DeletionFlag':
                 continue
             elif not value.strip():
@@ -390,16 +393,11 @@ class Reader:
                         else:
                             new_value = int(value)
                     except ValueError:
-                        if deci:
-                            if PANDAS_SUPPORT:
-                                new_value = nan
-                            else:
-                                new_value = 0.0
-                        else:
-                            new_value = 0
-                            # could return -1?
+                        new_value = None
                         if not self.quiet:
-                            print "Warning: non-numeric value %s found in numeric field %s." % (value, name)
+                            warning_msg = "non-numeric value %s found in numeric field %s of record %i." \
+                                % (value, name, i)
+                            warnings.warn(warning_msg)
                     value = new_value
             elif typ == b('D'):
                 try:
@@ -425,7 +423,7 @@ class Reader:
         recSize = self.__recordFmt()[1]
         f.seek(0)
         f.seek(self.__dbfHeaderLength() + (i * recSize))
-        return self.__record()
+        return self.__record(i)
 
     def records(self):
         """Returns all records in a dbf file."""
@@ -435,7 +433,7 @@ class Reader:
         f = self.__getFileObj(self.dbf)
         f.seek(self.__dbfHeaderLength())
         for i in range(self.numRecords):
-            r = self.__record()
+            r = self.__record(i)
             if r:
                 records.append(r)
         return records
@@ -466,16 +464,12 @@ class Reader:
         """Returns a list of combination geometry/attribute records for
         all records in a shapefile, with the records in a pandas dataframe"""
         if not PANDAS_SUPPORT:
-            try:
-                import pandas
-            except ImportError:
-                print "Pandas could not be imported. Is it installed?"
-                return None
-        
-        fieldNames = [_x[0] for _x in self.fields[1:]]
-        df = DataFrame([dict([('SHAPE', rec[0])] + zip(fieldNames, rec[1])) \
-                                 for rec in zip(self.shapes(), self.records())])
-        return df
+            raise ImportError("Pandas was not be loaded with shapefile. Is it installed?")
+                
+        srd = self.shapeRecordDicts()
+        records = pandas.DataFrame([x.record for x in srd])
+        shapes = pandas.DataFrame([x.shape.__dict__ for x in srd])
+        return pandas.concat({'record':records, 'shape':shapes}, axis=1)
         
 class Writer:
     """Provides write support for ESRI Shapefiles."""
