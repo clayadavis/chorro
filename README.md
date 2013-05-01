@@ -16,13 +16,16 @@ The intended workflow goes something like this:
 2.  Wrap your simulation in a generator function that yields snapshots of the
 simulation state.
 
-This repo has two examples of this workflow/framework. The first is a simple
-example implementation of Conway's game of life. That app depends on Numpy and
-Scipy. The second example, geoCPM, has a much longer list of dependencies
+This repo has two examples of this workflow/framework. To take a look at either example, check out the repo, navigate to the appropriate subfolder, and run the '\_webapp.py'. Then navigate to 'localhost:12345/life' or 'localhost:12345/geocpm' in your browser of choice.
+
+The first example is a simple example implementation of Conway's game of life. That app depends on Numpy and Scipy. 
+
+The second example, geoCPM, has a much longer list of dependencies
 including Numba, pandas, matplotlib, and networkx. It is an implementation of a
 large-q Potts model for algorithmically assigning voting districts based on
 some objective criteria.
 
-To take a look at either example, check out the repo, navigate to the
-appropriate subfolder, and run the '\_webapp.py'. Then navigate to
-'localhost:12345/life' or 'localhost:12345/geocpm' in your browser of choice.
+Notably, the geoCPM folder contains an update version of pyshp (shapefile.py)
+which deals with missing data and is able to load data into a pandas DataFrame.
+Also contained in the geoCPM folder are iPython notebooks documenting some of
+the algorithms used in the geoCPM code and the speedups gained with Numba.
