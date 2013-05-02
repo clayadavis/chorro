@@ -136,7 +136,7 @@ class SimulationBase(object):
         
         self.border_cells = np.zeros(len(self.df), dtype=np.bool)
         self._update_border_status()
-        self.populations = np.array(self.df['record', 'POP2000'], dtype=np.int32)
+        
         self.weights = np.array([(u,v,w['weight']) for (u,v,w) in self.G.edges(data=True)], dtype=np.int32)
         #self.adj = np.array(nx.to_numpy_matrix(self.G, weight='weight'), dtype=uint32)
         
@@ -277,6 +277,7 @@ class Simulation(SimulationBase):
     ## Can redefine and extend base methods.
     def __init__(self, *args, **kwargs):
         self.lambda_comp, self.lambda_pop = kwargs['lambdas']
+        self.populations = np.array(self.df['record', 'POP2000'], dtype=np.int32)
         SimulationBase.__init__(self, *args, **kwargs)
     
     def run(self, N=1, debug=False):
