@@ -16,7 +16,7 @@ The intended workflow goes something like this:
 2.  Wrap your simulation in a generator function that yields snapshots of the
 simulation state.
 
-This repo has two examples of this workflow/framework. To take a look at either example, check out the repo, navigate to the appropriate subfolder, and run the '\_webapp.py'. Then navigate to 'localhost:12345/life' or 'localhost:12345/geocpm' in your browser of choice.
+This repo has two examples of this workflow/framework. To take a look at either example, check out the repo, navigate to the appropriate subfolder, and run the '*\_webapp.py'. Then navigate to 'localhost:12345/life' or 'localhost:12345/geocpm' in your browser of choice.
 
 The first example is a simple example implementation of Conway's game of life. That app depends on Numpy and Scipy. 
 
