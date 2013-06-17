@@ -276,9 +276,9 @@ class SimulationBase(object):
 class Simulation(SimulationBase):
     ## Can redefine and extend base methods.
     def __init__(self, *args, **kwargs):
+        SimulationBase.__init__(self, *args, **kwargs)
         self.lambda_comp, self.lambda_pop = kwargs['lambdas']
         self.populations = np.array(self.df['record', 'POP2000'], dtype=np.int32)
-        SimulationBase.__init__(self, *args, **kwargs)
     
     def run(self, N=1, debug=False):
         if debug:
